@@ -1,0 +1,11 @@
+{
+  "links": {
+    "hello": "Hello",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills"
+  },
+  "welcome": {
+    "title": "I Am JavaScript developer"
+  }
+}

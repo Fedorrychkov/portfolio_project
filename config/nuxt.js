@@ -6,8 +6,21 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  plugins: [
+    {src: '~/plugins/vue-particles', ssr: false},
+    {src: '~/plugins/vue-scrollto', ssr: false},
+    '~/plugins/vue-lang',
+  ],
+  pluginOptions: {
+    i18n: {
+      locale: "ru",
+      fallbackLocale: "en",
+      localeDir: "locales",
+      enableInSFC: false
+    }
+  },
   head: {
-    title: 'Adonuxt',
+    title: 'Fedorrychkov - frontend/fullstack javascript разработчик',
     meta: [
       {
         charset: 'utf-8'
@@ -19,7 +32,32 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Adonuxt project'
+        content: 'Сайт портфолио frontend/fullstack разработчика Фёдора Рычкова. Здесь можно ознакомится с моим резюме и проектами.'
+      },
+      // OG META TAGS
+      {
+        property: 'og:image',
+        content: 'og-image.jpg'
+      },
+      {
+        property: 'og:image:width',
+        content: '333'
+      },
+      {
+        property: 'og:image:height',
+        content: '500'
+      },
+      {
+        property: 'og:title',
+        content: 'JavaScript разработчик Рычков Фёдор'
+      },
+      {
+        property: 'og:url',
+        content: 'https://fedorrychkov.com/'
+      },
+      {
+        property: 'og:description',
+        content: 'Портфолио и резюме можно найти туть!'
       }
     ],
     link: [

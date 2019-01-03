@@ -1,0 +1,23 @@
+.c-header-nav {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-left: -8px;
+  margin-right: -8px;
+
+  &__item {
+    margin: 0 8px;
+  }
+
+  &__link {
+    color: $white-color;
+    font-size: 18px;
+    transition: all $animation-fast;
+
+    &:hover, &.nuxt-link-exact-active {
+      opacity: .8;
+    }
+  }
+}

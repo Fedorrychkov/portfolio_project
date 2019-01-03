@@ -1,0 +1,11 @@
+{
+  "links": {
+    "hello": "Привет",
+    "about": "Обо мне",
+    "projects": "Проекты",
+    "skills": "Опыт"
+  },
+  "welcome": {
+    "title": "Я JavaScript разработчик"
+  }
+}

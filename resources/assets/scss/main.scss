@@ -1,34 +1,23 @@
-html, body
-{
-  background-color: #fff;
-  color: #2e2f30;
-  letter-spacing: 0.5px;
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  height: 100vh;
-  margin: 0;
-}
+@import './variables';
+@import './font';
+@import './normalize';
+@import './global';
 
-footer
-{
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
-}
+// Shared
+@import './shared/container';
+@import './shared/c-logo';
+@import './shared/ui/arrow';
 
-a, a:hover, a:focus, a:visited
-{
-  color: #744d82;
-}
 
-.logo {
-  width: 400px;
-}
+// Layouts
 
-.page-enter-active, .page-leave-active
-{
-  transition: opacity .5s
-}
-.page-enter, .page-leave-active
-{
-  opacity: 0
-}
+
+// Components
+@import './components/header/c-header';
+@import './components/header/c-header-nav';
+@import './components/welcome/c-welcome';
+@import './components/footer/c-footer';
+
+
+// Page
+

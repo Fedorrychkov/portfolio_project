@@ -1,52 +1,50 @@
 <template>
-  <div>
-    <nuxt/>
-    <my-footer/>
+  <div class="page fullpage">
+    <div class="page__top">
+      <my-header class="page__header" />
+      <main class="page__container">
+        <nuxt />
+      </main>
+    </div>
+    <my-footer class="page__footer" />
   </div>
 </template>
 
 <script>
-import MyFooter from '~/components/Footer.vue'
+import MyHeader from '~/components/header/Header.vue';
+import MyFooter from '~/components/footer/Footer.vue';
 
 export default {
   components: {
+    MyHeader,
     MyFooter
   }
 }
 </script>
+<style lang="scss" scoped>
+  .page {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // display: grid;
+    // grid-template-rows: 100px auto 100px;
+    // grid-template-columns: 100%;
+    // grid-template-areas:
+    //   "header"
+    //   "content"
+    //   "footer";
 
-<style>
-.container
-{
-  margin: 0;
-  width: 100%;
-  padding: 100px 0;
-  text-align: center;
-}
+    &__header {
+      // grid-area: header;
+    }
 
-.button, .button:visited
-{
-  display: inline-block;
-  color: #744d82;
-  letter-spacing: 1px;
-  background-color: #fff;
-  border: 2px solid #744d82;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15px 45px;
-}
+    &__container {
+      // grid-area: content;
+    }
 
-.button:hover, .button:focus
-{
-  color: #fff;
-  background-color: #744d82;
-}
-
-.title
-{
-  color: #505153;
-  font-weight: 300;
-  font-size: 2.5em;
-  margin: 0;
-}
+    &__footer {
+      // grid-area: footer;
+    }
+  }
 </style>
