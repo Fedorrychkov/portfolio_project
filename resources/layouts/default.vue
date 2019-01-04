@@ -15,6 +15,20 @@ import MyHeader from '~/components/header/Header.vue';
 import MyFooter from '~/components/footer/Footer.vue';
 
 export default {
+  data() {
+    return {
+      locale: 'ru'
+    }
+  },
+  mounted() {
+    var userLang = localStorage.getItem('portfolio.language') || navigator.language || navigator.userLanguage;
+    this.locale = userLang.substring(0, 2);
+  },
+  watch: {
+    locale (val) {
+      this.$i18n.locale = val;
+    }
+  },
   components: {
     MyHeader,
     MyFooter
