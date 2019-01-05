@@ -15,8 +15,9 @@
         <aside class="c-about__meta">
           <div class="keyval" v-for="item in meta" :key="item.type">
             <span class="key has-icon">
-              <font-awesome-icon :icon="['fa', item.icon]" />
-              {{ $t(item.key) }}</span>
+              <b><font-awesome-icon :icon="['fa', item.icon]" /></b>
+              {{ $t(item.key) }}
+            </span>
             <span class="value" v-if="item.type === 'age' || item.type === 'location'">{{ $t(item.value) }}</span>
             <span class="value" v-if="item.type === 'phone'"><a :href="`tel: ${$t(item.value)}`">{{ $t(item.value) }}</a></span>
             <span class="value" v-if="item.type === 'email'"><a :href="`mailto: ${$t(item.value)}`">{{ $t(item.value) }}</a></span>

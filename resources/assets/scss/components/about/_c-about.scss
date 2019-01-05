@@ -7,11 +7,11 @@
   }
 
   &__left {
-    width: 41.6%;
+    width: 35%;
   }
 
   &__right {
-    width: 58.3%;
+    width: 65%;
 
     .title {
       position: relative;
@@ -66,14 +66,15 @@
     padding: 0 30px;
     margin: 8px 0;
 
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
 
     .key {
       color: #333;
       width: 40%;
 
-      svg {
+      b {
+        min-width: 20px;
         margin-right: 8px;
       }
 
