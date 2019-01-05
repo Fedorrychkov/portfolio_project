@@ -1,5 +1,5 @@
 <template>
-  <div class="c-welcome" id="hello">
+  <section class="c-welcome" id="hello">
     <div class="c-welcome__animation">
       <no-ssr>
         <vue-particles color="#dedede" hoverMode="repulse"></vue-particles>
@@ -8,7 +8,7 @@
     <div class="container">
       <div class="c-welcome__hello">
         <span class="hello">{{$t('links.hello')}} !</span>
-        <p class="short">{{$t('welcome.title')}}</p>
+        <h1 class="short">{{$t('welcome.title')}}</h1>
         <p class="description">
           Пишу веб приложения с 2014 года.
           Начинал как верстальщик, но теперь занимаюсь разработкой сложного и безопасного фронтенда и бэкенда на JavaScript.
@@ -22,14 +22,15 @@
         </ul>
       </div>
     </div>
-    <a href="#" v-scroll-to="`#about`">
+    <nuxt-link to="#about" v-scroll-to="`#about`">
       <arrow class="arrow__down" />
-    </a>
-  </div>
+    </nuxt-link>
+  </section>
 </template>
 <script>
-import * as moment from 'moment';
 import Vue from 'vue';
+import * as moment from 'moment';
+
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookF, faVk, faTwitter, faInstagram, faLinkedinIn, faSkype } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';

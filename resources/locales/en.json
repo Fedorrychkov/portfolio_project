@@ -6,6 +6,31 @@
     "skills": "Skills"
   },
   "welcome": {
-    "title": "I am JavaScript developer"
+    "title": "I am JavaScript developer and co-founder of Labado"
+  },
+  "about": {
+    "title": "About Me",
+    "me": "I'm JavaScript Developer having than 3 Years Of Experience.",
+    "about-1": "Свой первый веб сайт я сделал на 1 курсе университета. Начинал, как и многие, с заказов от знакомых, а постепенно перешёл на разработку заказов из различных фриланс бирж. Очень много верстал, писал на jQuery, использовал Wordpress и PHP.",
+    "about-2": "Теперь я занимаюсь продакшн разработкой веб приложений. Часто применяю в работе javascript фреймворки и библиотеки для ускорения разработки. Пишу на ES6+, использую терминал и сижу на Ubuntu.",
+    "meta": {
+      "location": {
+        "key": "Location",
+        "value": "Russia, Kazan"
+      },
+      "phone": {
+        "key": "Phone",
+        "value": "+7 967 363-21-00"
+      },
+      "age": {
+        "key": "Age",
+        "value": "23"
+      },
+      "email": {
+        "key": "Email",
+        "value": "hire@fedorrychkov.com"
+      }
+    },
+    "download": "Download Resume"
   }
 }

@@ -43,6 +43,7 @@
   }
 
   &__hello {
+    max-width: 760px;
 
     .hello, .short {
       font-weight: bold;
@@ -69,7 +70,6 @@
 
     .description {
       color: $white-color;
-      max-width: 760px;
     }
   }
 
