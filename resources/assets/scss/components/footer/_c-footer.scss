@@ -1,3 +1,10 @@
 .c-footer {
+  background-color: #333;
+  padding: 50px 0;
+  color: #fff;
 
+  &__copyright {
+    font-size: 14px;
+    color: #6b7784;
+  }
 }

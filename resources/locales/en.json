@@ -32,5 +32,9 @@
       }
     },
     "download": "Download Resume"
-  }
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "copyright": "Website portfolio of JavaScript developer Fedor Rychkov"
 }
