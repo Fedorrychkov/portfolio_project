@@ -1,0 +1,91 @@
+.c-header-burger {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &__burger {
+      position: relative;
+      width: 30px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 10;
+      cursor: pointer;
+
+      &.active {
+        .item {
+          width: 100%;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+      .item {
+        display: block;
+        width: 70%;
+        height: 2px;
+        background-color: #fff;
+        transition: all $animation-fast ease-in-out;
+
+        &::after, &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          background-color: #fff;
+          height: 2px;
+          transition: all $animation-fast ease-in-out;
+        }
+
+        &::before {
+          width: 100%;
+          top: 0;
+        }
+
+        &::after {
+          width: 45%;
+          bottom: 0;
+        }
+      }
+    }
+
+    &__list {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #1461ff;
+      transition: all $animation-fast ease-in-out;
+      max-width: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0 20px;
+      padding-top: 80px;
+      transform: translate(150%, 0);
+      opacity: 0;
+
+      &.active {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+    }
+
+    &__link {
+      color: $white-color;
+      font-size: 18px;
+      transition: all $animation-fast;
+
+      &:hover, &.nuxt-link-exact-active {
+        opacity: .8;
+      }
+    }
+  }
+}

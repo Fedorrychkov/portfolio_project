@@ -99,4 +99,22 @@
       }
     }
   }
+
+  @media (max-width: 1024px) {
+    .keyval {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+    &__left {
+      width: 100%;
+      display: none;
+    }
+
+    &__right {
+      width: 100%;
+    }
+  }
 }

@@ -5,6 +5,11 @@
   z-index: 99;
   color: $white-color;
   font-weight: bold;
+  transition: all .15s ease;
+
+  &.offset {
+    background-color: #1461ff;
+  }
 
   &__container {
     display: flex;
@@ -16,5 +21,11 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    &__right {
+      display: none;
+    }
   }
 }

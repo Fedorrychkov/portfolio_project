@@ -1,5 +1,5 @@
 <template>
-  <header class="c-header">
+  <header :class="[{'c-header': true}, hClasses]">
     <div class="container c-header__container">
       <div class="c-header__left">
         <Logo />
@@ -11,6 +11,16 @@
           </li>
         </ul>
         <language-picker />
+      </div>
+      <div class="c-header-burger">
+        <div :class="{'c-header-burger__burger': true, 'active': openBurger}" @click="toggleBurger()">
+          <span class="item"></span>
+        </div>
+        <ul :class="{'c-header-burger__list': true, 'active': openBurger}">
+          <li class="c-header-burger__item" v-for="item in nav" :key="item.link" @click="toggleBurger()">
+            <nuxt-link class="c-header-burger__link" :to="item.link" v-scroll-to="item.link">{{ $t(item.title) }}</nuxt-link>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
@@ -25,14 +35,33 @@ export default {
       nav: [
         {link: '#hello', title: 'links.hello'},
         {link: '#about', title: 'links.about'},
-        {link: '#projects', title: 'links.projects'},
+        // {link: '#projects', title: 'links.projects'},
         {link: '#skills', title: 'links.skills'},
-      ]
+      ],
+      hClasses: [],
+      openBurger: false
     }
   },
   components: {
     Logo,
     LanguagePicker
+  },
+  mounted() {
+    document.addEventListener('scroll', () => {
+      const rect = document.querySelector('#hello').getBoundingClientRect();
+      if (rect.top < -200) {
+        this.hClasses = ['offset'];
+      } else {
+        this.hClasses = [];
+      }
+
+      this.openBurger = false;
+    });
+  },
+  methods: {
+    toggleBurger() {
+      this.openBurger = !this.openBurger;
+    }
   }
 };
 </script>

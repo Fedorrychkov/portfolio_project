@@ -24,7 +24,7 @@
           </div>
         </aside>
         <div class="c-about__controlls">
-          <a href="#" target="_blank" class="button resume">{{ $t('about.download') }}</a>
+          <a :href="$t('about.link')" target="blank" class="button resume">{{ $t('about.download') }}</a>
         </div>
       </div>
     </div>
