@@ -76,7 +76,7 @@ export default {
     checkHeaderOffset () {
       const rect = document.querySelector('#hello').getBoundingClientRect();
 
-      if (rect.top < -200 && window.outerWidth > 1024 || rect.top < -40 && window.outerWidth < 1024) {
+      if (rect.top < -200 && window.outerWidth > 1024 || rect.top < -20 && window.outerWidth < 1024) {
         this.hClasses = ['offset'];
       } else {
         this.hClasses = [];
