@@ -13,8 +13,8 @@
   "about": {
     "title": "About Me",
     "me": "I'm JavaScript Developer having than 3 Years Of Experience.",
-    "about-1": "Свой первый веб сайт я сделал на 1 курсе университета. Начинал, как и многие, с заказов от знакомых, а постепенно перешёл на разработку заказов из различных фриланс бирж. Очень много верстал, писал на jQuery, использовал Wordpress и PHP.",
-    "about-2": "Теперь я занимаюсь продакшн разработкой веб приложений. Часто применяю в работе javascript фреймворки и библиотеки для ускорения разработки. Пишу на ES6+, использую терминал и сижу на Ubuntu.",
+    "about-1": "Self-organized, work experience in large companies and startups, able to work in stressful situations and with short deadlines. In my work, I prefer to use Scrum methodology. Able to adequately assess the tasks and complete the work on time.",
+    "about-2": "Able to manage a team of up to 5 people and distribute resources in an appropriate way. I am writing code on ES6 +, using the terminal and sitting under Mac OS.",
     "meta": {
       "location": {
         "key": "Location",
