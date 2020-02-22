@@ -9,6 +9,10 @@
 
   &.offset {
     background-color: #000;
+
+    .c-header-burger__list {
+      top: 63px;
+    }
   }
 
   &__container {
