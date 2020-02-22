@@ -59,7 +59,12 @@ export default {
     document.addEventListener('scroll', this.checkHeaderOffset);
     this.checkHeaderOffset();
     this.setHeightListener();
+
     this.$scrollTo(this.$router.history.current.hash || '');
+
+    setTimeout(() => {
+      this.pickItem(this.$router.history.current.hash || '')
+    }, 150)
   },
   destroyed () {
     document.removeEventListener('scroll', this.checkHeaderOffset);
@@ -79,7 +84,7 @@ export default {
     pickItem (link) {
       setTimeout(() => {
         this.removeActiveSections();
-        this.setActiveLink(link);
+        this.setActiveLink(link.split('#')[1] || '');
       }, 150);
     },
     removeActiveSections () {
