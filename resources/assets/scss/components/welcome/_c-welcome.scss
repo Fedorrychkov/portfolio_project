@@ -6,7 +6,7 @@
 
   background-size: cover;
   background-position: center center;
-  background-image: url('~/portfolio-bg.jpg');
+  background-image: url('/portfolio-bg.jpg');
 
   display: flex;
   flex-direction: column;
@@ -43,7 +43,7 @@
   }
 
   &__hello {
-    max-width: 760px;
+    max-width: 880px;
 
     .hello, .short {
       font-weight: bold;
@@ -69,6 +69,7 @@
     }
 
     .description {
+      max-width: 760px;
       color: $white-color;
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <section class="c-about" id="about">
+  <section class="c-about vue-blockpage" id="about">
     <div class="container c-about__container">
       <div class="c-about__left">
 

@@ -6,7 +6,9 @@
     "skills": "Skills"
   },
   "welcome": {
-    "title": "I am JavaScript developer and co-founder of Labado"
+    "title": "I am JavaScript developer, co-founder of",
+    "and": "and",
+    "description": "I have been writing web applications since 2014. I started as a layout designer, and now I am developing a highly loaded frontend in JavaScript."
   },
   "about": {
     "title": "About Me",

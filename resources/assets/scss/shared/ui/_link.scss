@@ -1,0 +1,12 @@
+.link {
+  color: inherit;
+  transition: opacity ease-out .3s;
+
+  &.white {
+    color: #fff;
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+}

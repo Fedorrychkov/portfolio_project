@@ -1,6 +1,6 @@
 <template>
-  <aside class="language-picker">
-    <div class="language-picker__active" @click="toggleList">
+  <aside class="language-picker" @mouseenter="visible = true" @mouseleave="visible = false">
+    <div class="language-picker__active" @click="choiseLanguage()">
         <img :src="active.img" class="language-picker__image" :alt="active.key" />
     </div>
     <ul :class="{'language-picker__list': true, 'open': visible}">
@@ -35,14 +35,19 @@ export default {
     });
   },
   methods: {
-    toggleList() {
-      this.visible = !this.visible;
-    },
     choiseLanguage(item) {
       this.visible = false;
-      this.$i18n.locale = item.key;
-      this.active = item;
-      localStorage.setItem('portfolio.language', item.key);
+
+      if (item) {
+        this.$i18n.locale = item.key;
+        this.active = item;
+      } else {
+        const active = this.list.filter(el => this.active && this.active.key !== el.key)
+        this.$i18n.locale = active[0].key;
+        this.active = active[0];
+      }
+
+      localStorage.setItem('portfolio.language', this.$i18n.locale);
     }
   },
 };
@@ -72,31 +77,31 @@ export default {
     border-radius: 5px;
 
     &:hover {
-      background-color: #f1f1f1;
+      opacity: 0.75;
     }
 
     span {
       margin-left: 8px;
-      color: #333;
+      color: #fff;
     }
   }
 
   &__list {
     position: absolute;
-    background-color: #fff;
+    background-color: #000;
     top: 34px;
     right: 0;
     border-radius: 5px;
     transform: translate(0, 10%);
     opacity: 0;
     z-index: -10;
-    transition: all .15s ease-in-out;
+    transition: opacity .15s ease-in-out;
 
     &::after {
       content: "";
       position: absolute;
       border: 9px solid transparent;
-      border-bottom: 10px solid #fff;
+      border-bottom: 10px solid #000;
       top: -15px;
       right: 4px;
       z-index: 1;

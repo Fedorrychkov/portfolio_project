@@ -7,7 +7,9 @@
       <div class="c-header__right">
         <ul class="c-header-nav">
           <li class="c-header-nav__item" v-for="item in nav" :key="item.link">
-            <nuxt-link class="c-header-nav__link" :to="item.link" v-scroll-to="item.link">{{ $t(item.title) }}</nuxt-link>
+            <div @click="pickItem(item.link)">
+              <nuxt-link class="c-header-nav__link" :to="item.link" v-scroll-to="item.link">{{ $t(item.title) }}</nuxt-link>  
+            </div>
           </li>
         </ul>
         <language-picker />
@@ -38,6 +40,9 @@ export default {
         // {link: '#projects', title: 'links.projects'},
         {link: '#skills', title: 'links.skills'},
       ],
+      header: undefined,
+      sections: undefined,
+      navHeight: undefined,
       hClasses: [],
       openBurger: false
     }
@@ -47,8 +52,22 @@ export default {
     LanguagePicker
   },
   mounted() {
-    document.addEventListener('scroll', () => {
+    this.sections = document.querySelectorAll('.vue-blockpage');
+    this.header = document.querySelector('header');
+    this.navHeight = this.header.offsetHeight;
+
+    document.addEventListener('scroll', this.checkHeaderOffset);
+    this.checkHeaderOffset();
+    this.setHeightListener();
+    this.$scrollTo(this.$router.history.current.hash || '');
+  },
+  destroyed () {
+    document.removeEventListener('scroll', this.checkHeaderOffset);
+  },
+  methods: {
+    checkHeaderOffset () {
       const rect = document.querySelector('#hello').getBoundingClientRect();
+
       if (rect.top < -200) {
         this.hClasses = ['offset'];
       } else {
@@ -56,10 +75,48 @@ export default {
       }
 
       this.openBurger = false;
-    });
-  },
-  methods: {
-    toggleBurger() {
+    },
+    pickItem (link) {
+      setTimeout(() => {
+        this.removeActiveSections();
+        this.setActiveLink(link);
+      }, 150);
+    },
+    removeActiveSections () {
+      this.sections.forEach((node) => {
+        node.classList.remove('active');
+      });
+      this.header.querySelectorAll('a').forEach((node) => {
+        node.classList.remove('nuxt-link-exact-active');
+      });
+    },
+    setActiveLink (item) {
+      this.header.querySelectorAll('a').forEach((node) => {
+        const href = node.getAttribute('href');
+
+        if (href === `/#${item}`) {
+          node.classList.add('nuxt-link-exact-active');
+        }
+      });
+    },
+    setHeightListener () {
+      document.addEventListener('scroll', () => {
+        const cur_pos = window.scrollY;
+        
+        this.sections.forEach((node) => {
+          const top = node.offsetTop - this.navHeight;
+          const bottom = top + node.offsetHeight;
+          
+          if (cur_pos >= top && cur_pos <= bottom) {
+            this.removeActiveSections();
+            node.classList.add('active');
+            this.setActiveLink(node.getAttribute('id'))
+            this.header.querySelector(`a[href="/#${node.getAttribute('id')}"]`).classList.add('nuxt-link-exact-active');
+          }
+        });
+      });
+    },
+    toggleBurger () {
       this.openBurger = !this.openBurger;
     }
   }

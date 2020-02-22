@@ -58,6 +58,14 @@ module.exports = {
       {
         property: 'og:description',
         content: 'Портфолио и резюме можно найти туть!'
+      },
+      {
+        name: 'yandex-verification',
+        content: '06131fe7e497e8e5'
+      },
+      {
+        name: 'google-site-verification',
+        content: 'OzxDXQKMwuyGrgSrcDF08cTWum1fdyGJ9fz63X_9jKc'
       }
     ],
     link: [

@@ -1,7 +1,12 @@
 .c-skills {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: #1461ff;
+  background-color: #000;
+  min-height: calc(100vh - 450px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .title {
     text-align: center;

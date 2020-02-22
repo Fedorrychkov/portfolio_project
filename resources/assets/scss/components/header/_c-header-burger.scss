@@ -60,9 +60,10 @@
       top: 0;
       right: 0;
       bottom: 0;
-      background-color: #1461ff;
+      background-color: #000;
       transition: all $animation-fast ease-in-out;
-      max-width: 180px;
+      max-width: calc(100vw - 120px);
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
