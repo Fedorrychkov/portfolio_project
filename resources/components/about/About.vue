@@ -18,7 +18,12 @@
               <b><font-awesome-icon :icon="['fa', item.icon]" /></b>
               {{ $t(item.key) }}
             </span>
-            <span class="value" v-if="item.type === 'age' || item.type === 'location'">{{ $t(item.value) }}</span>
+            <span class="value" v-if="item.type === 'location'">
+              {{ $t(item.value) }}
+            </span>
+            <span class="value" v-if="item.type === 'age'">
+              {{ age || $t(item.value) }}
+            </span>
             <span class="value" v-if="item.type === 'phone'"><a :href="`tel: ${$t(item.value)}`">{{ $t(item.value) }}</a></span>
             <span class="value" v-if="item.type === 'email'"><a :href="`mailto: ${$t(item.value)}`">{{ $t(item.value) }}</a></span>
           </div>
@@ -32,6 +37,7 @@
 </template>
 <script>
 import Vue from 'vue';
+import * as moment from 'moment';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faMapMarker, faCalendarAlt, faMobileAlt, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -41,15 +47,17 @@ library.add(faMapMarker, faCalendarAlt, faMobileAlt, faEnvelope);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 export default {
-  data() {
-    return {
+  data: () => ({
+      age: 23,
       meta: [
         {icon: 'map-marker', key: 'about.meta.location.key', value: 'about.meta.location.value', type: 'location'},
         {icon: 'calendar-alt', key: 'about.meta.age.key', value: 'about.meta.age.value', type: 'age'},
         {icon: 'mobile-alt', key: 'about.meta.phone.key', value: 'about.meta.phone.value', type: 'phone'},
         {icon: 'envelope', key: 'about.meta.email.key', value: 'about.meta.email.value', type: 'email'},
       ]
-    }
+  }),
+  mounted () {
+    this.age = moment().diff('1996-06-17', 'years', false);
   }
 };
 </script>

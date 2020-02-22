@@ -8,7 +8,7 @@
     <div class="container">
       <div class="c-welcome__hello">
         <span class="hello">{{$t('links.hello')}} !</span>
-        <h1 class="short">{{$t('welcome.title')}} <a href="//labado.ru" class="link white">Labado</a> {{$t('welcome.and')}} <a href="//belka.guru" class="link white">Belka.guru</a></h1>
+        <h1 class="short">{{$t('welcome.title')}} <a href="//labado.ru" target="_blank" class="link white">Labado</a> {{$t('welcome.and')}} <a href="//belka.guru" target="_blank" class="link white">Belka.guru</a></h1>
         <p class="description">
           {{$t('welcome.description')}}
         </p>

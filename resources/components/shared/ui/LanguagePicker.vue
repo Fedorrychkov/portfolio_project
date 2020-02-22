@@ -113,6 +113,26 @@ export default {
       z-index: 2;
     }
   }
+
+  @media (max-width: 768px) {
+    margin: 20px 0;
+
+    &__image {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__list {
+      top: 55px;
+      left: 0;
+      right: auto;
+
+      &::after {
+        right: auto;
+        left: 12px;
+      }
+    }
+  }
 }
 </style>
 

@@ -22,6 +22,9 @@
           <li class="c-header-burger__item" v-for="item in nav" :key="item.link" @click="toggleBurger()">
             <nuxt-link class="c-header-burger__link" :to="item.link" v-scroll-to="item.link">{{ $t(item.title) }}</nuxt-link>
           </li>
+          <li class="c-header-burger__item" @click="toggleBurger()">
+            <language-picker />
+          </li>
         </ul>
       </div>
     </div>
