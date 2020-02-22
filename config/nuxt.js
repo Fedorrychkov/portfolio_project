@@ -6,6 +6,18 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  modules: [
+    [
+      '@naumstory/nuxtjs-yandex-metrika',
+      {
+        id: '57659530',
+        webvisor: true,
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true
+      }
+    ]
+  ],
   plugins: [
     {src: '~/plugins/vue-particles', ssr: false},
     {src: '~/plugins/vue-scrollto', ssr: false},
