@@ -9,18 +9,18 @@ module.exports = {
   plugins: [
     {src: '~/plugins/vue-particles', ssr: false},
     {src: '~/plugins/vue-scrollto', ssr: false},
-    '~/plugins/vue-lang',
+    '~/plugins/vue-lang'
   ],
   pluginOptions: {
     i18n: {
-      locale: "ru",
-      fallbackLocale: "en",
-      localeDir: "locales",
+      locale: 'ru',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
       enableInSFC: false
     }
   },
   head: {
-    title: 'Fedorrychkov - frontend/fullstack javascript разработчик',
+    title: 'Федор Рычков - JavaScript разработчик, сооснователь Labado и Belka.guru',
     meta: [
       {
         charset: 'utf-8'
@@ -32,12 +32,12 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Сайт портфолио frontend/fullstack разработчика Фёдора Рычкова. Здесь можно ознакомится с моим резюме и проектами.'
+        content: 'Пишу веб приложения с 2014 года. Начинал как верстальщик, теперь занимаюсь разработкой высоконагруженного фронтенда на JavaScript.'
       },
       // OG META TAGS
       {
         property: 'og:image',
-        content: 'og-image.jpg'
+        content: 'fedorrychkov.jpeg'
       },
       {
         property: 'og:image:width',
@@ -49,15 +49,15 @@ module.exports = {
       },
       {
         property: 'og:title',
-        content: 'JavaScript разработчик Рычков Фёдор'
+        content: 'JavaScript Developer Fedor Rychkov'
       },
       {
         property: 'og:url',
-        content: 'https://fedorrychkov.com/'
+        content: 'http://new.fedorrychkov.com/'
       },
       {
         property: 'og:description',
-        content: 'Портфолио и резюме можно найти туть!'
+        content: 'I am JavaScript developer, co-founder of Labado and Belka.guru'
       },
       {
         name: 'yandex-verification',
