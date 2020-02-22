@@ -60,10 +60,10 @@ export default {
     this.checkHeaderOffset();
     this.setHeightListener();
 
-    this.$scrollTo(this.$router.history.current.hash || '');
+    this.$router.history.current.hash && this.$scrollTo(this.$router.history.current.hash);
 
     setTimeout(() => {
-      this.pickItem(this.$router.history.current.hash || '')
+      this.$router.history.current.hash && this.pickItem(this.$router.history.current.hash)
     }, 150)
   },
   destroyed () {
