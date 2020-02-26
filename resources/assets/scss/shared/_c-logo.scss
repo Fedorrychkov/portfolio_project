@@ -5,6 +5,14 @@
   cursor: pointer;
   font-size: 24px;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__name {
+    color: #fff;
+  }
+
   &::before {
     content: "";
     position: absolute;

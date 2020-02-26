@@ -1,7 +1,7 @@
 <template>
   <section class="c-skills vue-blockpage" id="skills">
     <div class="container c-skills__container">
-      <h3 class="title custom xl 500"> {{ $t('skills.title') }} </h3>
+      <h3 class="title custom xl b500"> {{ $t('skills.title') }} </h3>
 
       <div class="c-skills__content">
         <ul class="c-skills__list">

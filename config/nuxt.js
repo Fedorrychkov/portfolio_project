@@ -19,9 +19,15 @@ module.exports = {
     ]
   ],
   plugins: [
+    {src: '~/plugins/vue-vuetify', ssr: true},
     {src: '~/plugins/vue-particles', ssr: false},
     {src: '~/plugins/vue-scrollto', ssr: false},
-    '~/plugins/vue-lang'
+    '~/plugins/vue-lang',
+    '~/plugins/vue-filter-numformat'
+  ],
+  buildModules: [
+    // With options
+    ['@nuxtjs/vuetify', { /* module options */ }]
   ],
   pluginOptions: {
     i18n: {

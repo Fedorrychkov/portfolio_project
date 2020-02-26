@@ -31,11 +31,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.6.3",
     "@fortawesome/vue-fontawesome": "^0.1.4",
     "@naumstory/nuxtjs-yandex-metrika": "^1.0.5",
+    "axios": "^0.19.2",
     "cross-env": "^3.1.4",
     "nuxt": "latest",
     "standard": "^8.6.0",
     "vue-i18n": "^8.7.0",
     "vue-scrollto": "^2.13.0",
+    "vuetify": "^2.2.15",
     "youch": "^2.0.4"
   },
   "standard": {
@@ -48,16 +50,20 @@
     "App": "./app"
   },
   "devDependencies": {
+    "@nuxtjs/vuetify": "^1.11.0",
     "babel-eslint": "^7.1.1",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
+    "lodash": "^4.17.15",
     "node-sass": "^4.11.0",
     "nodemon": "^1.11.0",
     "sass-loader": "^7.1.0",
     "standard": "^8.6.0",
-    "vue-particles": "^1.0.9"
+    "vue-cli-plugin-vuetify": "^2.0.5",
+    "vue-particles": "^1.0.9",
+    "vuetify-loader": "^1.4.3"
   }
 }

@@ -1,9 +1,9 @@
 <template>
   <section class="c-welcome vue-blockpage" id="hello">
     <div class="c-welcome__animation">
-      <no-ssr>
+      <client-only>
         <vue-particles color="#dedede" hoverMode="repulse"></vue-particles>
-      </no-ssr>
+      </client-only>
     </div>
     <div class="container">
       <div class="c-welcome__hello">

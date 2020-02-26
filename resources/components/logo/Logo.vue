@@ -1,5 +1,5 @@
 <template>
-  <div class="c-logo">
+  <nuxt-link class="c-logo link" to="/">
     <span class="c-logo__name" aria-label="logo">Rychkov</span>
-  </div>
+  </nuxt-link>
 </template>
