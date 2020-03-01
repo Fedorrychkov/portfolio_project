@@ -2,7 +2,7 @@
   <footer class="c-footer">
     <div class="container c-footer__container">
       <ul class="navigation">
-        <li v-for="(item, i) in nav" :key="i">
+        <li v-for="(item, i) in nav" :key="i" @click="removeActiveHeaderLink">
           <nuxt-link :to="item.link" class="c-footer__copyright link">{{item.title}}</nuxt-link>
         </li>
       </ul>
@@ -19,6 +19,15 @@ export default {
       { link: '/salary-calculator', title: 'Зарплатный калькулятор' }
     ],
     currentDate: new Date
-  })
+  }),
+  methods: {
+    removeActiveHeaderLink () {
+      const header = document.querySelector('header');
+
+      header && header.querySelectorAll('a').forEach((node) => {
+        node.classList.remove('nuxt-link-exact-active');
+      });
+    }
+  }
 }
 </script>

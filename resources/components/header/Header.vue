@@ -8,7 +8,7 @@
         <ul class="c-header-nav">
           <li class="c-header-nav__item" v-for="item in nav" :key="item.link">
             <div @click="pickItem(item.link)">
-              <nuxt-link class="c-header-nav__link" :to="item.link" v-scroll-to="item.link">{{ $t(item.title) }}</nuxt-link>  
+              <nuxt-link class="c-header-nav__link" :to="item.link" v-scroll-to="item.selector">{{ $t(item.title) }}</nuxt-link>  
             </div>
           </li>
         </ul>
@@ -20,7 +20,7 @@
         </div>
         <ul :class="{'c-header-burger__list': true, 'active': openBurger}">
           <li class="c-header-burger__item" v-for="item in nav" :key="item.link" @click="toggleBurger()">
-            <nuxt-link class="c-header-burger__link" :to="item.link" v-scroll-to="item.link">{{ $t(item.title) }}</nuxt-link>
+            <nuxt-link class="c-header-burger__link" :to="item.link" v-scroll-to="item.selector">{{ $t(item.title) }}</nuxt-link>
           </li>
           <li class="c-header-burger__item" @click="toggleBurger()">
             <language-picker />
@@ -38,10 +38,10 @@ export default {
   data() {
     return {
       nav: [
-        {link: '#hello', title: 'links.hello'},
-        {link: '#about', title: 'links.about'},
+        {link: '/#hello', title: 'links.hello', selector: '#hello'},
+        {link: '/#about', title: 'links.about', selector: '#about'},
         // {link: '#projects', title: 'links.projects'},
-        {link: '#skills', title: 'links.skills'},
+        {link: '/#skills', title: 'links.skills', selector: '#skills'},
       ],
       header: undefined,
       sections: undefined,
@@ -74,9 +74,10 @@ export default {
   },
   methods: {
     checkHeaderOffset () {
-      const rect = document.querySelector('#hello').getBoundingClientRect();
+      const rect = document.querySelector('#hello') && document.querySelector('#hello').getBoundingClientRect() || {};
+      const homepage = document.querySelector('.homepage') && document.querySelector('.homepage').getBoundingClientRect() || false;
 
-      if (rect.top < -200 && window.outerWidth > 1024 || rect.top < -20 && window.outerWidth < 1024) {
+      if ((rect.top < -200 && homepage || rect.top < 0) && window.outerWidth > 1024 || rect.top < -20 && window.outerWidth < 1024) {
         this.hClasses = ['offset'];
       } else {
         this.hClasses = [];
