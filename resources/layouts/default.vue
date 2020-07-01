@@ -7,12 +7,14 @@
       </main>
     </div>
     <my-footer class="page__footer" />
+    <!-- <likes-layout /> -->
   </div>
 </template>
 
 <script>
-import MyHeader from '~/components/header/Header.vue';
-import MyFooter from '~/components/footer/Footer.vue';
+import MyHeader from '@/components/header/Header';
+import MyFooter from '@/components/footer/Footer';
+// import LikesLayout from '@/components/LikesLayout';
 
 export default {
   data() {
@@ -32,6 +34,7 @@ export default {
   components: {
     MyHeader,
     MyFooter
+    // LikesLayout
   }
 }
 </script>

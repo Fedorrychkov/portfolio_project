@@ -49,7 +49,7 @@
               <tr>
                 <th class="text-left">День</th>
                 <th class="text-left hide-in-mobile">Зарплата</th>
-                <th class="text-left">Сумма ({{sum/getWorksDayLength().length | numFormat}} в день)</th>
+                <th class="text-left">Сумма ({{sum/(getWorksDayLength().length || 1) | numFormat}} в день)</th>
               </tr>
             </thead>
             <tbody>
@@ -86,6 +86,7 @@ export default {
       '30000',
       '50000',
       '100000',
+      '110000',
       '150000',
       '200000'
     ],
@@ -107,7 +108,7 @@ export default {
     dayType: {
       0: 'Рабочий день',
       1: 'Выходной день',
-      2: 'Слкоащенный рабочий день'
+      2: 'Сокращенный рабочий день'
     },
     monthDaysWithTypes: undefined,
     paymentData: undefined
@@ -160,7 +161,7 @@ export default {
       return this.monthDaysWithTypes.filter(item => Number(item) !== 1)
     },
     createCalculationTable () {
-      this.payday = this.sum/this.getWorksDayLength().length
+      this.payday = this.sum/(this.getWorksDayLength().length || 1)
       this.paymentData = this.monthDaysWithTypes.reduce((acc, curr, index) => {
         const type = Number(curr)
         const hours = 0 === type ? 8 : type === 2 ? 7 : 0

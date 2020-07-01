@@ -2,7 +2,7 @@
   <section class="c-about vue-blockpage" id="about">
     <div class="container c-about__container">
       <div class="c-about__left">
-
+        <img class="avatar" src="https://portal.vseinstrumenti.ru/files/profiles/face_c11ba953-10f5-7d47-8e3a-bedea68c7234.jpg?t=06280509" alt="Rychkov Fedor">
       </div>
       <div class="c-about__right">
         <h3 class="title"> {{ $t('about.title') }} </h3>
@@ -24,8 +24,8 @@
             <span class="value" v-if="item.type === 'age'">
               {{ age || $t(item.value) }}
             </span>
-            <span class="value" v-if="item.type === 'phone'"><a :href="`tel: ${$t(item.value)}`">{{ $t(item.value) }}</a></span>
-            <span class="value" v-if="item.type === 'email'"><a :href="`mailto: ${$t(item.value)}`">{{ $t(item.value) }}</a></span>
+            <span class="value" v-if="item.type === 'phone'"><a :href="`tel:${getPhoneWithoutSpaces($t(item.value))}`">{{ $t(item.value) }}</a></span>
+            <span class="value" v-if="item.type === 'email'"><a :href="`mailto:${$t(item.value)}`">{{ $t(item.value) }}</a></span>
           </div>
         </aside>
         <div class="c-about__controlls">
@@ -48,16 +48,21 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 export default {
   data: () => ({
-      age: 23,
-      meta: [
-        {icon: 'map-marker', key: 'about.meta.location.key', value: 'about.meta.location.value', type: 'location'},
-        {icon: 'calendar-alt', key: 'about.meta.age.key', value: 'about.meta.age.value', type: 'age'},
-        {icon: 'mobile-alt', key: 'about.meta.phone.key', value: 'about.meta.phone.value', type: 'phone'},
-        {icon: 'envelope', key: 'about.meta.email.key', value: 'about.meta.email.value', type: 'email'},
-      ]
+    age: 23,
+    meta: [
+      {icon: 'map-marker', key: 'about.meta.location.key', value: 'about.meta.location.value', type: 'location'},
+      {icon: 'calendar-alt', key: 'about.meta.age.key', value: 'about.meta.age.value', type: 'age'},
+      {icon: 'mobile-alt', key: 'about.meta.phone.key', value: 'about.meta.phone.value', type: 'phone'},
+      {icon: 'envelope', key: 'about.meta.email.key', value: 'about.meta.email.value', type: 'email'},
+    ]
   }),
   mounted () {
     this.age = moment().diff('1996-06-17', 'years', false);
+  },
+  methods: {
+    getPhoneWithoutSpaces (text) {
+      return `${text}`.replace(/ /g, '')
+    }
   }
 };
 </script>
